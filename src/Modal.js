@@ -1,9 +1,11 @@
+import ReactDOM from 'react-dom';
+
 const Modal = ({ show, onCloseButtonClick }) => {
   if (!show) {
     return null;
   }
 
-  return (
+  return ReactDOM.createPortal(
     <div className="modal-wrapper">
       <div className="modal">
         <div className="body">
@@ -14,6 +16,7 @@ const Modal = ({ show, onCloseButtonClick }) => {
         </div>
       </div>
     </div>
+    , document.body
   );
 };
 
